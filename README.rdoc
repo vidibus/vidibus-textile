@@ -1,0 +1,37 @@
+= vidibus-textile
+
+Basically, this is a wrapper for RedCloth with some extensions. It is inspired by the acts_as_textiled plugin, but without the model integration (for now).
+
+
+== Usage
+
+The basic two methods are:
+
+  #to_html (provided by RedCloth)
+  Vidibus::Textile.new('Some *say*, "love":http://doit.xxx is a _river_.').to_html
+  # => '<p>Some <strong>say</strong>, <a href="http://doit.xxx">love</a> is a <em>river</em>.</p>'
+
+  #to_text
+  Vidibus::Textile.new('Some *say*, "love":http://doit.xxx is a _river_.').to_text
+  # => "Some say, love is a river."
+
+The method #to_text will return a plain text version of textile content but keep newlines intact. However, if
+you just want a stripped version without newlines, provide the option :plain => true
+
+  #to_text with :plain => true
+  Vidibus::Textile.new("Super\nTrouper").to_text(:plain => true)
+  # => "Super Trouper"
+
+
+== View helper
+
+For your convenience, the view helper ##stripped is available (as couterpart for Rails' ##textilize).
+
+  # In you view...
+  stripped("*Super*\nTrouper", :plain => true)
+  # => "Super Trouper"
+
+
+== Copyright
+
+Copyright (c) 2010 Andre Pankratz. See LICENSE for details.
