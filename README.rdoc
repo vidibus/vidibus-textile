@@ -2,6 +2,8 @@
 
 Basically, this is a wrapper for RedCloth with some extensions. It is inspired by the acts_as_textiled plugin, but without the model integration (for now).
 
+This gem is part of the open source SOA framework Vidibus: http://vidibus.org.
+
 
 == Usage
 
