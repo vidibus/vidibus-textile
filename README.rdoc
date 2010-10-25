@@ -20,16 +20,16 @@ The basic methods are:
 The method #to_text will return a plain text version of textile content but keep newlines intact. However, if
 you just want a stripped version without newlines, provide the option :plain => true
 
-  #to_text with :plain => true
+  # #to_text with :plain => true
   Vidibus::Textile.new("Super\nTrouper").to_text(:plain => true)
   # => "Super Trouper"
 
 
 == View helper
 
-For your convenience, the view helper ##stripped is available (as couterpart for Rails' ##textilize).
+For your convenience, the view helper #stripped is available (as counterpart for Rails' #textilize).
 
-  # In you view...
+  # In your view...
   stripped("*Super*\nTrouper", :plain => true)
   # => "Super Trouper"
 
