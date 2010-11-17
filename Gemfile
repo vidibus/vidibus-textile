@@ -1,4 +1,5 @@
-source "http://gemcutter.org"
+source :rubygems
+
 gem "bundler", "~> 1.0.0"
 gem "RedCloth"
 gem "activesupport", "~> 3.0.0"
