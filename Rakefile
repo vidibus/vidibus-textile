@@ -15,6 +15,8 @@ begin
     gem.authors = ["Andre Pankratz"]
     gem.add_dependency "RedCloth"
     gem.add_dependency "activesupport"
+    gem.add_dependency "actionpack", "~> 3.0.0"
+    gem.add_dependency "mongoid", "~> 2.0.0.beta.20"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
