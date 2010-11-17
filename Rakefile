@@ -25,7 +25,7 @@ end
 Rspec::Core::RakeTask.new(:rcov) do |t|
   t.pattern = "spec/**/*_spec.rb"
   t.rcov = true
-  t.rcov_opts = ["--exclude", "^spec,/gems/", "-Ispec"]
+  t.rcov_opts = ["--exclude", "^spec,/gems/"]
 end
 
 Rake::RDocTask.new do |rdoc|
