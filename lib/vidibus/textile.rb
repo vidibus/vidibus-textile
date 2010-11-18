@@ -1,4 +1,5 @@
 require "textile/extensions"
+require "textile/mongoid"
 
 module Vidibus
   module Textile
@@ -6,12 +7,12 @@ module Vidibus
     # A convenience method for creating a new TextileDoc. See
     # RedCloth::TextileDoc.
     def self.new(*args, &block)
-      Textile::Doc.new(*args, &block)
+      Doc.new(*args, &block)
     end
 
     # Include extension modules (if any) in TextileDoc.
     def self.include(*args)
-      Textile::Doc.send(:include, *args)
+      Doc.send(:include, *args)
     end
 
     class Doc < ::RedCloth::TextileDoc
