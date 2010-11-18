@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{vidibus-textile}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andre Pankratz"]
-  s.date = %q{2010-10-01}
+  s.date = %q{2010-11-18}
   s.description = %q{Provides textile formatting through RedCloth and adds methods for getting plain text version of textile markup.}
   s.email = %q{andre@vidibus.com}
   s.extra_rdoc_files = [
@@ -43,6 +43,7 @@ Gem::Specification.new do |s|
   s.test_files = [
     "spec/spec_helper.rb",
      "spec/vidibus/textile/action_view_spec.rb",
+     "spec/vidibus/textile/mongoid_spec.rb",
      "spec/vidibus/textile_spec.rb"
   ]
 
