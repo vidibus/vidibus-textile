@@ -8,7 +8,7 @@ begin
   require "jeweler"
   Jeweler::Tasks.new do |gem|
     gem.name = "vidibus-textile"
-    gem.summary = %Q{Wrapper for RedCloth with extensions.}
+    gem.summary = %Q{Wrapper for RedCloth with extensions for Mongoid.}
     gem.description = %Q{Provides textile formatting through RedCloth and adds methods for getting plain text version of textile markup.}
     gem.email = "andre@vidibus.com"
     gem.homepage = "http://github.com/vidibus/vidibus-textile"
