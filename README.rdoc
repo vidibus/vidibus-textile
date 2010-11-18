@@ -1,19 +1,27 @@
 = vidibus-textile
 
-Basically, this is a wrapper for RedCloth with some extensions. It is inspired by the acts_as_textiled plugin, but without the model integration (for now).
+Basically, this is a wrapper for RedCloth with some extensions. It is inspired by the acts_as_textiled plugin and extends your Mongoid models.
 
-This gem is part of the open source SOA framework Vidibus: http://vidibus.org.
+This gem is part of the open source SOA framework Vidibus: http://vidibus.org
+
+
+== Installation
+
+Add the dependency to the Gemfile of your application:
+
+  gem "vidibus-textile"
+
+Then call `bundle install` on your console.
 
 
 == Usage
 
 The basic methods are:
 
-  #to_html (provided by RedCloth)
   Vidibus::Textile.new('Some *say*, "love":http://doit.xxx is a _river_.').to_html
   # => '<p>Some <strong>say</strong>, <a href="http://doit.xxx">love</a> is a <em>river</em>.</p>'
+  # (#to_html is provided by RedCloth)
 
-  #to_text
   Vidibus::Textile.new('Some *say*, "love":http://doit.xxx is a _river_.').to_text
   # => "Some say, love is a river."
 
@@ -23,6 +31,27 @@ you just want a stripped version without newlines, provide the option :plain => 
   # #to_text with :plain => true
   Vidibus::Textile.new("Super\nTrouper").to_text(:plain => true)
   # => "Super Trouper"
+
+
+== Mongoid integration
+
+Adding textile content to your Mongoid model is simple:
+
+  class Page
+    include Mongoid::Document
+    include Vidibus::Textile::Mongoid
+    textile :body
+  end
+
+By setting textile :body on the page model above, it will be extended by two fields:
+
+  field :body
+  # => Contains the textile content.
+
+  field :body_plain
+  # => Contains a plain text version of the content, stored in the database.
+
+Additionally, the method #body_html is available. As one could guess, it returns rendered html from the textile content.
 
 
 == View helper
