@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{vidibus-textile}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andre Pankratz"]
-  s.date = %q{2010-11-19}
+  s.date = %q{2011-01-02}
   s.description = %q{Provides textile formatting through RedCloth and adds methods for getting plain text version of textile markup.}
   s.email = %q{andre@vidibus.com}
   s.extra_rdoc_files = [
@@ -62,10 +62,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rspec>, ["~> 2.0.0.beta.20"])
       s.add_development_dependency(%q<rr>, [">= 0"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_runtime_dependency(%q<RedCloth>, [">= 0"])
-      s.add_runtime_dependency(%q<activesupport>, [">= 0"])
-      s.add_runtime_dependency(%q<actionpack>, ["~> 3.0.0"])
-      s.add_runtime_dependency(%q<mongoid>, ["~> 2.0.0.beta.20"])
     else
       s.add_dependency(%q<RedCloth>, [">= 0"])
       s.add_dependency(%q<activesupport>, ["~> 3.0.0"])
@@ -77,10 +73,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rspec>, ["~> 2.0.0.beta.20"])
       s.add_dependency(%q<rr>, [">= 0"])
       s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<RedCloth>, [">= 0"])
-      s.add_dependency(%q<activesupport>, [">= 0"])
-      s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
-      s.add_dependency(%q<mongoid>, ["~> 2.0.0.beta.20"])
     end
   else
     s.add_dependency(%q<RedCloth>, [">= 0"])
@@ -93,10 +85,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rspec>, ["~> 2.0.0.beta.20"])
     s.add_dependency(%q<rr>, [">= 0"])
     s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<RedCloth>, [">= 0"])
-    s.add_dependency(%q<activesupport>, [">= 0"])
-    s.add_dependency(%q<actionpack>, ["~> 3.0.0"])
-    s.add_dependency(%q<mongoid>, ["~> 2.0.0.beta.20"])
   end
 end
 
