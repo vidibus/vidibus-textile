@@ -1,36 +1,17 @@
-require "rubygems"
-require "rake"
-require "rake/rdoctask"
-require "rspec"
-require "rspec/core/rake_task"
+require 'bundler'
+require 'rdoc/task'
+require 'rspec'
+require 'rspec/core/rake_task'
 
-begin
-  require "jeweler"
-  Jeweler::Tasks.new do |gem|
-    gem.name = "vidibus-textile"
-    gem.summary = %Q{Wrapper for RedCloth with extensions for Mongoid.}
-    gem.description = %Q{Provides textile formatting through RedCloth and adds methods for getting plain text version of textile markup.}
-    gem.email = "andre@vidibus.com"
-    gem.homepage = "http://github.com/vidibus/vidibus-textile"
-    gem.authors = ["Andre Pankratz"]
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
-end
+Bundler::GemHelper.install_tasks
 
-Rspec::Core::RakeTask.new(:rcov) do |t|
-  t.pattern = "spec/**/*_spec.rb"
-  t.rcov = true
-  t.rcov_opts = ["--exclude", "^spec,/gems/"]
-end
+$LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
+require 'vidibus/textile/version'
 
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?("VERSION") ? File.read("VERSION") : ""
-  rdoc.rdoc_dir = "rdoc"
-  rdoc.title = "vidibus-textile #{version}"
-  rdoc.rdoc_files.include("README*")
-  rdoc.rdoc_files.include("lib/**/*.rb")
-  rdoc.options << "--charset=utf-8"
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title = "vidibus-textile #{Vidibus::Textile::VERSION}"
+  rdoc.rdoc_files.include('README*')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.options << '--charset=utf-8'
 end

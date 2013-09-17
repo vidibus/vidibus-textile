@@ -1,5 +1,5 @@
-require "textile/extensions"
-require "textile/mongoid"
+require "vidibus/textile/extensions"
+require "vidibus/textile/mongoid"
 
 module Vidibus
   module Textile
